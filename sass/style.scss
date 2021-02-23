@@ -16,7 +16,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 Otip_Theme is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
-@import "vendors/bootstrap";
+//@import "vendors/bootstrap";
 @import "abstracts/variables";
 @import "abstracts/colors";
 @import "components/bvi";
@@ -26,6 +26,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "layout/normolize";
 @import "layout/topper";
 @import "layout/menu";
+@import "layout/header";
 @import "components/carousel";
 @import "components/slick-slider";
 @import "pages/mainAbout";

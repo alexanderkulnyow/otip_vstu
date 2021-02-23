@@ -14,11 +14,10 @@ const
 ;
 
 const
-
     path = {
-        sass: 'sass/**/*.*',
+        sass: './sass/**/*.*',
         css: './',
-        php: '**/*.php'
+        php: './**/*.php'
     }
 
 function browserSync() {

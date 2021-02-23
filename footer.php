@@ -11,9 +11,9 @@
 ?>
 </div>
 <footer class="container-fluid footer">
-    <div class="row bloginfo">
+    <div class="row bloginfo justify-content-center">
         <a href="https://vstu.by/ru/">
-            <img src="<?php bloginfo('template_directory'); ?>/assets/img/vstu_logo_new.png" alt="logo">
+            <img src="<?php bloginfo('template_directory'); ?>/img/vstu_logo_new.png" alt="logo">
         </a>
             <p><?php echo get_bloginfo( 'description' ) ?></p>
 
