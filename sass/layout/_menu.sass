@@ -1,0 +1,68 @@
+nav.navbar
+  width: 100% !important
+  padding: 0
+  margin-top: 0
+  margin-bottom: 0
+
+  height: 60px
+
+.navbar-default
+  margin-top: 0
+  margin-bottom: 0
+  padding: 0
+  background: none
+  border: none
+  box-shadow: none
+ul.navbar-nav
+  li.menu-item
+    a
+      color: black
+    a:hover,
+    a:focus
+      color: $coral !important
+      background: none !important
+  li.active
+    >a
+      color: $coral !important
+    a:hover
+      color: $coral !important
+    a:focus
+      color: $coral !important
+
+
+
+.navbar-default .navbar-nav > .dropdown-menu .active  > a,
+.navbar-default .navbar-nav > .dropdown-menu .active > a:hover,
+.navbar-default .navbar-nav > .dropdown-menu .active > a:focus
+  color: $coral
+  background: none
+  box-shadow: none
+  border: none
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a
+  background: none
+  box-shadow: none
+  border: none
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a
+  color: #777
+  background: none
+  box-shadow: none
+  border: none
+
+/* Цвет и фон пункта меню в раскрывающихся списках, при поднесении к нему курсора мышки или при нахождении его в фокусе */
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus
+  color: $coral
+  background: none
+  box-shadow: none
+  border: none
+
+img.header-logo
+  display: block
+  position: relative
+  height: 60px
+  width: auto
+  margin-top: 5px
+  margin-bottom: 5px
+  margin-left: 50px
