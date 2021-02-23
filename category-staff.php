@@ -30,7 +30,7 @@ get_header();
                         <a href="<?php echo esc_url( get_permalink() ); ?>"
                            rel="bookmark">
                             <div class="card" style="border: none">
-								<?php the_post_thumbnail( array( 200, 'class' => 'img-fluid mx-auto' ) ); ?>
+								<?php the_post_thumbnail('thumbnail', array( 200, 'class' => 'img-fluid mx-auto' ) ); ?>
                                 <div class="card-body mx-auto">
                                     <h4 class="img-fluid text-center" itemprop="name"
                                         style="width: 160px; white-space: normal;"><?php the_title(); ?></h4>
@@ -60,8 +60,8 @@ get_header();
 					'order'            => 'ASC',
 					'include'          => array(),
 					'exclude'          => array( 19 ),
-					'meta_key'         => '',
-					'meta_value'       => '',
+					'meta_key'         => ' ',
+					'meta_value'       => ' ',
 					'post_type'        => 'post',
 					'include_children' => 'false',
 					'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
@@ -73,7 +73,7 @@ get_header();
                     <div class="col-sm-6 col-md-4 staff_prepodlist">
 
                         <div class="card" style="border: none">
-							<?php the_post_thumbnail( array( 200, 'class' => 'img-fluid mx-auto' ) ); ?>
+							<?php the_post_thumbnail('thumbnail', array( 200, 'class' => 'img-fluid mx-auto' ) ); ?>
                             <div class="card-body mx-auto">
                                 <h4 class="img-fluid text-center" itemprop="name"
                                     style="width: 170px;"><?php the_title(); ?></h4>

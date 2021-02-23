@@ -11,7 +11,7 @@ get_header();
                 <div class="col-12 pb-2">
                     <a href="<?php echo esc_url( get_permalink() ); ?>">
                         <h2 class="color__mint" itemprop="name"><?php the_title(); ?></h2>
-	                    <?php the_post_thumbnail('small', array('class' => 'img-fluid w-100')); ?>
+	                    <?php the_post_thumbnail('medium', array('class' => 'img-fluid w-100')); ?>
                     </a>
 <!--                    <div class="text-left mt-4 mb-4">--><?php //the_excerpt(); ?><!--</div>-->
 

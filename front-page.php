@@ -65,7 +65,7 @@ get_header(); ?>
 					?>
                     <div class="staff__item">
                         <a href=" <?php echo esc_url( get_permalink() ); ?>">
-							<?php the_post_thumbnail( array( 'class' => ' rounded-circle center-block ' ) ); ?>
+							<?php the_post_thumbnail('thumbnail', array( 'class' => ' rounded-circle center-block ' ) ); ?>
                             <h4 class="text-center mt-2" itemprop="name"> <?php echo get_the_title(); ?></h4>
                         </a>
                         <div class="mt-3">

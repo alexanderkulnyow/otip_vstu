@@ -22,7 +22,7 @@
 	<div class="entry-content col-12">
 		<?php
 		if ( has_post_thumbnail() ) {
-			the_post_thumbnail('small', array('class' => 'img-fluid w-100'));
+			the_post_thumbnail('thumbnail', array('class' => 'img-fluid w-100'));
 		}
 		else {
 			the_excerpt();
