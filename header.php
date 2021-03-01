@@ -32,6 +32,9 @@
         <div class="navbar navbar-default" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
+                <?php
+                university_logo();
+                ?>
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1"
@@ -39,7 +42,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 				<?php
-				university_logo();
+
 				wp_nav_menu( array(
 					'theme_location'  => 'primary',
 					'depth'           => 2,

@@ -117,13 +117,13 @@ function theme_styles() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/vendor/font-awesome-4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'slick', get_template_directory_uri() . '/vendor/slick/slick.css' );
 	wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/vendor//slick/slick-theme.css' );
-	wp_enqueue_style( 'otip_theme-style', get_stylesheet_uri(), '', '6' );
+	wp_enqueue_style( 'otip_theme-style', get_stylesheet_uri(), '', '2.1' );
 	wp_enqueue_style( 'dashicons' );
 //	подключаем скрипты
 	wp_enqueue_script( 'jquery' );
 
 	wp_enqueue_script( 'bootstrap.js',
-		get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.min.js', array(), ' 1', true );
+		get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.bundle.min.js', array(), ' 1', true );
 	wp_enqueue_script( 'slick',
 		get_template_directory_uri() . '/vendor/slick/slick.js', array(), ' 1', true );
 	wp_enqueue_script( 'modernizr-2.8.3.min',
@@ -133,7 +133,7 @@ function theme_styles() {
 	wp_enqueue_script( 'otip_theme-navigation',
 		get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'main',
-		get_template_directory_uri() . '/js/main.js', array(), ' 1.9', true );
+		get_template_directory_uri() . '/js/main.js', array(), ' 2.1', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
@@ -240,19 +240,19 @@ function otip__topper() {
         <div class="col">
             <div class="inlinetext topper-dropdown">
                 <i class="fa fa-map-marker" aria-hidden="true" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                <a class="dropdown-menu1" aria-labelledby="dropdownMenuButton1" href="#location"><?php echo get_option( 'contacts_options' )['my_adres']; ?></a>
+                <a id="dropdown-menu3" aria-labelledby="dropdownMenuButton1" href="#location"><?php echo get_option( 'contacts_options' )['my_adres']; ?></a>
             </div>
         </div>
         <div class="col">
             <div class="inlinetext topper-dropdown">
                 <i class="fa fa-envelope-o" aria-hidden="true" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                <a class="dropdown-menu1" aria-labelledby="dropdownMenuButton2" href="mailto:<?php echo get_option( 'contacts_options' )['my_mail']; ?>"><?php echo get_option( 'contacts_options' )['my_mail']; ?></a>
+                <a id="dropdown-menu1" aria-labelledby="dropdownMenuButton2" href="mailto:<?php echo get_option( 'contacts_options' )['my_mail']; ?>"><?php echo get_option( 'contacts_options' )['my_mail']; ?></a>
             </div>
         </div>
         <div class="col">
             <div class="inlinetext topper-dropdown">
                 <i class="fa fa-mobile" aria-hidden="true" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                <a class="dropdown-menu1" aria-labelledby="dropdownMenuButton3" href="tel: <?php echo get_option( 'contacts_options' )['my_tel']; ?>"><?php echo get_option( 'contacts_options' )['my_tel']; ?></a>
+                <a id="dropdown-menu2" aria-labelledby="dropdownMenuButton3" href="tel: <?php echo get_option( 'contacts_options' )['my_tel']; ?>"><?php echo get_option( 'contacts_options' )['my_tel']; ?></a>
             </div>
         </div>
         <div class="col align-self-end d-md-none d-lg-block">

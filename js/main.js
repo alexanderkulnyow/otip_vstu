@@ -94,16 +94,18 @@ jQuery(function($){
 });
 
 
-let topperdropdown = document.getElementsByClassName("dropdown-menu1");
+let topperdropdown1 = document.getElementById("dropdown-menu1");
+let topperdropdown2 = document.getElementById("dropdown-menu2");
+let topperdropdown3 = document.getElementById("dropdown-menu3");
 let WWidht = window.innerWidth;
-console.log(topperdropdown[1].classList);
-console.log(WWidht);
 
 if (WWidht <= 800) {
-    for (i = 0; i < topperdropdown.length; i++) {
-        topperdropdown[i].classList.add('dropdown-menu1');
-    }
+    topperdropdown1.classList.add("dropdown-menu");
+    topperdropdown2.classList.add("dropdown-menu");
+    topperdropdown3.classList.add("dropdown-menu");
 } else {
-
+    topperdropdown1.classList.remove("dropdown-menu");
+    topperdropdown2.classList.remove("dropdown-menu");
+    topperdropdown3.classList.remove("dropdown-menu");
 }
-console.log(topperdropdown[1].classList);
+
