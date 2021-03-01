@@ -44,7 +44,7 @@ get_header(); ?>
     </section>
 
 
-    <section class="container-fluid d-none d-md-block prepodback">
+    <section class="container-fluid d-md-block prepodback">
         <h2>Преподавательский состав</h2>
         <div class="row">
             <div class="staff">

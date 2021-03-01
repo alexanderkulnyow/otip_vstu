@@ -133,7 +133,7 @@ function theme_styles() {
 	wp_enqueue_script( 'otip_theme-navigation',
 		get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'main',
-		get_template_directory_uri() . '/js/main.js', array(), ' 1.1', true );
+		get_template_directory_uri() . '/js/main.js', array(), ' 1.9', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
@@ -238,21 +238,21 @@ function otip__topper() {
  ?>
     <div class="topper row">
         <div class="col">
-            <div class="inlinetext">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <a href="#location"><?php echo get_option( 'contacts_options' )['my_adres']; ?></a>
+            <div class="inlinetext topper-dropdown">
+                <i class="fa fa-map-marker" aria-hidden="true" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                <a class="dropdown-menu1" aria-labelledby="dropdownMenuButton1" href="#location"><?php echo get_option( 'contacts_options' )['my_adres']; ?></a>
             </div>
         </div>
         <div class="col">
-            <div class="inlinetext">
-                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                <a href="mailto:<?php echo get_option( 'contacts_options' )['my_mail']; ?>"><?php echo get_option( 'contacts_options' )['my_mail']; ?></a>
+            <div class="inlinetext topper-dropdown">
+                <i class="fa fa-envelope-o" aria-hidden="true" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                <a class="dropdown-menu1" aria-labelledby="dropdownMenuButton2" href="mailto:<?php echo get_option( 'contacts_options' )['my_mail']; ?>"><?php echo get_option( 'contacts_options' )['my_mail']; ?></a>
             </div>
         </div>
         <div class="col">
-            <div class="inlinetext">
-                <i class="fa fa-mobile" aria-hidden="true"></i>
-                <a href="tel: <?php echo get_option( 'contacts_options' )['my_tel']; ?>"><?php echo get_option( 'contacts_options' )['my_tel']; ?></a>
+            <div class="inlinetext topper-dropdown">
+                <i class="fa fa-mobile" aria-hidden="true" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                <a class="dropdown-menu1" aria-labelledby="dropdownMenuButton3" href="tel: <?php echo get_option( 'contacts_options' )['my_tel']; ?>"><?php echo get_option( 'contacts_options' )['my_tel']; ?></a>
             </div>
         </div>
         <div class="col align-self-end d-md-none d-lg-block">

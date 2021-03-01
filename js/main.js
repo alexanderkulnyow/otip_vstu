@@ -29,7 +29,7 @@ jQuery(function($){
 
             }
         }, {
-            breakpoint: 400,
+            breakpoint: 480,
             settings: {
                 slidesToShow: 1,
                 infinite: true
@@ -44,7 +44,28 @@ jQuery(function($){
         autoplay: true,
         autoplaySpeed: 6000,
         dots: false,
-        arrows: false
+        arrows: false,
+        responsive: [{
+            breakpoint: 1300,
+            settings: {
+                slidesToShow: 3,
+                infinite: true
+            }
+        }, {
+            breakpoint: 800,
+            settings: {
+                slidesToShow: 2,
+                infinite: true
+
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                infinite: true
+
+            }
+        }]
     });
 
 // ПОДГРУЗКА ПОСТОВ
@@ -73,3 +94,16 @@ jQuery(function($){
 });
 
 
+let topperdropdown = document.getElementsByClassName("dropdown-menu1");
+let WWidht = window.innerWidth;
+console.log(topperdropdown[1].classList);
+console.log(WWidht);
+
+if (WWidht <= 800) {
+    for (i = 0; i < topperdropdown.length; i++) {
+        topperdropdown[i].classList.add('dropdown-menu1');
+    }
+} else {
+
+}
+console.log(topperdropdown[1].classList);
