@@ -29,7 +29,7 @@ jQuery(function($){
 
             }
         }, {
-            breakpoint: 300,
+            breakpoint: 400,
             settings: {
                 slidesToShow: 1,
                 infinite: true

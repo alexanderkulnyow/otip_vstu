@@ -57,17 +57,16 @@
         <!-- Все страницы кроме заглавной-->
         <div class="row">
 			<?php if ( ! is_front_page() ):
-				echo '<div class="breadcrumbs__wrapper">';
+//				echo '<div class="breadcrumbs__wrapper">';
 				if ( is_archive() ) {
-					the_archive_title('<h1>', '</h1>' );
+//					the_archive_title( '<h1>', '</h1>' );
 				} elseif ( is_single() || is_page() ) {
-					the_title( '<h1>', '</h1>');
+//					the_title( '<h1>', '</h1>' );
 				}
-
-				if ( function_exists( 'dds_breadcrumbs' ) ):
-					dds_breadcrumbs( ' / ' );
+				if ( function_exists( 'dds_readline' ) ):
+					dds_readline( ' / ' );
 				endif;
-				echo '</div>';
+//				echo '</div>';
 			else:?>
                 <img class="img-fluid w-100 p-0" src="<?php echo get_header_image(); ?>"
                      alt="<?php echo get_bloginfo( 'title' ); ?>">

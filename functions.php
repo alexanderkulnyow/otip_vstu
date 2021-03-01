@@ -133,7 +133,7 @@ function theme_styles() {
 	wp_enqueue_script( 'otip_theme-navigation',
 		get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'main',
-		get_template_directory_uri() . '/js/main.js', array(), ' 1', true );
+		get_template_directory_uri() . '/js/main.js', array(), ' 1.1', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
@@ -232,7 +232,7 @@ add_action( 'wp_ajax_nopriv_loadmore', 'true_load_posts' );
 
 require 'f/f_setting.php';
 require 'f/f_theme-settings.php';
-//require 'f/Kulnyow_Breadcrumbs.php';
+require 'f/Kulnyow_Breadcrumbs.php';
 
 function otip__topper() {
  ?>
