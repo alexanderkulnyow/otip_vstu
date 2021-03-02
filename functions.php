@@ -132,6 +132,8 @@ function theme_styles() {
 		get_template_directory_uri() . '/js/plugins.js', array(), ' 1', true );
 	wp_enqueue_script( 'otip_theme-navigation',
 		get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+//	wp_enqueue_script( 'otip_theme-customizer',
+//		get_template_directory_uri() . '/js/customizer.js', array(), '20151215', true );
 	wp_enqueue_script( 'main',
 		get_template_directory_uri() . '/js/main.js', array(), ' 2.1', true );
 }

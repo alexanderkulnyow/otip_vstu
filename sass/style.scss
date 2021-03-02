@@ -1,5 +1,5 @@
 /*! about pattern https://sass-guidelin.es/#the-7-1-pattern
-Theme Name: theme_otip_vstu
+Theme Name: otip_vstu
 Theme URI: https://otip.vstu.by/
 Author: Alexander Kulnyow /Vitebsk/
 Author URI: http://dds.by/
@@ -17,16 +17,21 @@ Otip_Theme is based on Underscores http://underscores.me/, (C) 2012-2016 Automat
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 //@import "vendors/bootstrap";
+
+
 @import "abstracts/variables";
 @import "abstracts/colors";
 @import "components/bvi";
 @import "base/fonts";
 @import "abstracts/mixins";
 @import "components/buttons";
+//layout
+@import "layout/card-news";
 @import "layout/normolize";
 @import "layout/topper";
 @import "layout/menu";
 @import "layout/header";
+
 @import "components/carousel";
 @import "components/slick-slider";
 @import "pages/mainAbout";
@@ -150,3 +155,30 @@ a img.aligncenter {
   background-color: $coral;
 }
 
+p {
+  -webkit-hyphens: auto;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-chars: 6 3 3;
+  -webkit-hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-last: always;
+  -webkit-hyphenate-limit-zone: 8%;
+
+  -moz-hyphens: auto;
+  -moz-hyphenate-limit-chars: 6 3 3;
+  -moz-hyphenate-limit-lines: 2;
+  -moz-hyphenate-limit-last: always;
+  -moz-hyphenate-limit-zone: 8%;
+
+  -ms-hyphens: auto;
+  -ms-hyphenate-limit-chars: 6 3 3;
+  -ms-hyphenate-limit-lines: 2;
+  -ms-hyphenate-limit-last: always;
+  -ms-hyphenate-limit-zone: 8%;
+
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
+}

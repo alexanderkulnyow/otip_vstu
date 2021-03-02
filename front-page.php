@@ -15,6 +15,7 @@
 get_header(); ?>
 
     <section class="container mt-5 mb-5">
+        <div class="row">
         <h1><span class="underline">Но</span>вости университета</h1>
         <div class="news__block front__news">
 			<?php
@@ -40,13 +41,14 @@ get_header(); ?>
 			}
 			?>
         </div>
-
+        </div>
     </section>
 
 
-    <section class="container-fluid d-md-block prepodback">
+    <section class="container-fluid">
+        <div class="row prepodback">
         <h2>Преподавательский состав</h2>
-        <div class="row">
+
             <div class="staff">
 				<?php
 				global $post;

@@ -77,6 +77,6 @@
 			//		    ?>
         </div>
     </header><!-- #masthead -->
-    <div id="sitecontent" class="">
+    <div id="sitecontent" class="row">
 
 
