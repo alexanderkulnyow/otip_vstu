@@ -26,57 +26,48 @@
 <?php //the_header_image_tag(); ?>
 <div id="page" class="site container-fluid">
 
-    <header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header">
+        <div class="row"></div>
+
 		<?php otip__topper(); ?>
-        <!--main navigatino-->
-        <div class="navbar navbar-default" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
-                <?php
-                university_logo();
-                ?>
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-				<?php
+        <div class="w-100"></div>
+        <nav id="site-navigation" class="main-navigation">
+            <div class="site-branding">
+				<?php university_logo(); ?>
+            </div><!-- .site-branding -->
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="dashicons dashicons-menu-alt3"></span>
+            </button>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'menu_id'        => 'primary-menu',
+				)
+			);
+			?>
+        </nav><!-- #site-navigation -->
 
-				wp_nav_menu( array(
-					'theme_location'  => 'primary',
-					'depth'           => 2,
-					'container'       => 'div',
-					'container_class' => 'collapse navbar-collapse justify-content-end bg-white',
-					'container_id'    => 'bs-example-navbar-collapse-1',
-					'menu_class'      => 'nav navbar-nav',
-					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-					'walker'          => new WP_Bootstrap_Navwalker(),
-				) );
-				?>
-            </nav>
-
-        </div>
-        <!-- Все страницы кроме заглавной-->
-        <div class="row">
-			<?php if ( ! is_front_page() ):
+    </header>
+    <div class="row">
+		<?php if ( ! is_front_page() ):
 //				echo '<div class="breadcrumbs__wrapper">';
-				if ( is_archive() ) {
+			if ( is_archive() ) {
 //					the_archive_title( '<h1>', '</h1>' );
-				} elseif ( is_single() || is_page() ) {
+			} elseif ( is_single() || is_page() ) {
 //					the_title( '<h1>', '</h1>' );
-				}
-				if ( function_exists( 'dds_readline' ) ):
-					dds_readline( ' / ' );
-				endif;
+			}
+			if ( function_exists( 'dds_readline' ) ):
+				dds_readline( ' / ' );
+			endif;
 //				echo '</div>';
-			else:?>
-                <img class="img-fluid w-100 p-0" src="<?php echo get_header_image(); ?>"
-                     alt="<?php echo get_bloginfo( 'title' ); ?>">
-			<?php endif;
-			//		    ?>
-        </div>
-    </header><!-- #masthead -->
+		else:?>
+            <img class="img-fluid w-100 p-0" src="<?php echo get_header_image(); ?>"
+                 alt="<?php echo get_bloginfo( 'title' ); ?>">
+		<?php endif;
+		//		    ?>
+    </div>
+
     <div id="sitecontent" class="row">
 
 

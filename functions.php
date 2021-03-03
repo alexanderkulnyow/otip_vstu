@@ -10,9 +10,9 @@
 remove_action( 'wp_head', 'rsd_link' );
 remove_action( 'wp_head', 'wlwmanifest_link' );
 remove_action( 'wp_head', 'wp_generator' );
-add_filter( 'get_the_archive_title', function( $title ){
-	return preg_replace('~^[^:]+: ~', '', $title );
-});
+add_filter( 'get_the_archive_title', function ( $title ) {
+	return preg_replace( '~^[^:]+: ~', '', $title );
+} );
 
 if ( ! function_exists( 'otip_theme_setup' ) ) :
 	/**
@@ -237,29 +237,35 @@ require 'f/f_theme-settings.php';
 require 'f/Kulnyow_Breadcrumbs.php';
 
 function otip__topper() {
- ?>
+	?>
     <div class="topper row">
         <div class="col">
             <div class="inlinetext topper-dropdown">
-                <i class="fa fa-map-marker" aria-hidden="true" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                <a id="dropdown-menu3" aria-labelledby="dropdownMenuButton1" href="#location"><?php echo get_option( 'contacts_options' )['my_adres']; ?></a>
+                <i class="fa fa-map-marker" aria-hidden="true" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                   aria-expanded="false"></i>
+                <a id="dropdown-menu3" aria-labelledby="dropdownMenuButton1"
+                   href="#location"><?php echo get_option( 'contacts_options' )['my_adres']; ?></a>
             </div>
         </div>
         <div class="col">
             <div class="inlinetext topper-dropdown">
-                <i class="fa fa-envelope-o" aria-hidden="true" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                <a id="dropdown-menu1" aria-labelledby="dropdownMenuButton2" href="mailto:<?php echo get_option( 'contacts_options' )['my_mail']; ?>"><?php echo get_option( 'contacts_options' )['my_mail']; ?></a>
+                <i class="fa fa-envelope-o" aria-hidden="true" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+                   aria-expanded="false"></i>
+                <a id="dropdown-menu1" aria-labelledby="dropdownMenuButton2"
+                   href="mailto:<?php echo get_option( 'contacts_options' )['my_mail']; ?>"><?php echo get_option( 'contacts_options' )['my_mail']; ?></a>
             </div>
         </div>
         <div class="col">
             <div class="inlinetext topper-dropdown">
-                <i class="fa fa-mobile" aria-hidden="true" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                <a id="dropdown-menu2" aria-labelledby="dropdownMenuButton3" href="tel: <?php echo get_option( 'contacts_options' )['my_tel']; ?>"><?php echo get_option( 'contacts_options' )['my_tel']; ?></a>
+                <i class="fa fa-mobile" aria-hidden="true" id="dropdownMenuButton3" data-bs-toggle="dropdown"
+                   aria-expanded="false"></i>
+                <a id="dropdown-menu2" aria-labelledby="dropdownMenuButton3"
+                   href="tel: <?php echo get_option( 'contacts_options' )['my_tel']; ?>"><?php echo get_option( 'contacts_options' )['my_tel']; ?></a>
             </div>
         </div>
         <div class="col align-self-end d-md-none d-lg-block">
-<?php echo do_shortcode('[bvi]')?>
+			<?php echo do_shortcode( '[bvi]' ) ?>
         </div>
     </div>
-<?php
+	<?php
 }

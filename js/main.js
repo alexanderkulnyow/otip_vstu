@@ -94,18 +94,3 @@ jQuery(function($){
 });
 
 
-let topperdropdown1 = document.getElementById("dropdown-menu1");
-let topperdropdown2 = document.getElementById("dropdown-menu2");
-let topperdropdown3 = document.getElementById("dropdown-menu3");
-let WWidht = window.innerWidth;
-
-if (WWidht <= 800) {
-    topperdropdown1.classList.add("dropdown-menu");
-    topperdropdown2.classList.add("dropdown-menu");
-    topperdropdown3.classList.add("dropdown-menu");
-} else {
-    topperdropdown1.classList.remove("dropdown-menu");
-    topperdropdown2.classList.remove("dropdown-menu");
-    topperdropdown3.classList.remove("dropdown-menu");
-}
-

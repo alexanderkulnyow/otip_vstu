@@ -1,0 +1,95 @@
+.site-header
+  .topper
+  #site-navigation
+  .menu-toggle
+    display: none
+  .main-navigation
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    .site-branding
+    .menu-main-container
+      .sub-menu
+        border: 1px solid white
+          radius: 5px
+        background: white
+        position: absolute
+        padding-left: 0
+        list-style: none
+        display: none
+        flex-direction: column
+        &>.menu-item
+          padding: 5px 0
+
+      .nav-menu
+        margin-bottom: 0
+        list-style: none
+        display: flex
+        flex-direction: row
+        .current-menu-item
+          a
+            color: $mint
+        .menu-item
+          padding: 10px 15px
+          a
+            text-decoration: none
+
+
+.menu-item-has-children:hover .sub-menu
+  display: flex !important
+
+.main-navigation-mobile
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  .menu-toggle
+    z-index: 1000
+    display: block
+    background: none
+  .menu-main-container
+    display: none
+
+
+.toggled
+
+  .menu-main-container
+    display: flex !important
+    position: absolute
+    top: 0
+    right: 0
+    width: 100%
+    height: 100%
+    background: white
+    z-index: 999
+    .nav-menu
+      list-style: none
+      width: 100%
+      padding: 0
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+    .sub-menu
+      border: 1px solid white
+        radius: 5px
+      background: white
+      position: absolute
+      padding-left: 0
+      list-style: none
+      display: none
+      flex-direction: column
+      &>.menu-item
+        padding: 5px 0
+      .nav-menu
+        margin-bottom: 0
+        list-style: none
+        display: flex
+        flex-direction: row
+        .current-menu-item
+          a
+            color: $mint
+        .menu-item
+          padding: 10px 15px
+          a
+            text-decoration: none
