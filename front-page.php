@@ -13,7 +13,7 @@
  */
 
 get_header(); ?>
-
+<main class="">
     <section class="container mt-5 mb-5">
         <div class="row">
         <h1><span class="underline">Но</span>вости университета</h1>
@@ -45,7 +45,7 @@ get_header(); ?>
     </section>
 
 
-    <section class="container-fluid">
+    <section class="container-fluid ">
         <div class="row prepodback">
         <h2>Преподавательский состав</h2>
 
@@ -85,7 +85,7 @@ get_header(); ?>
         </div>
 		<?php wp_reset_postdata(); ?>
     </section>
-    <section class="container-fluid googlemap">
+    <section class="container-fluid googlemap p-0">
         <h1><span class="underline">На</span>ши контакты</h1>
         <div class="container">
             <div class="row">
@@ -110,7 +110,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid p-0">
             <div class="row">
                 <div class="col-lg-12" id="map">
 
@@ -133,5 +133,6 @@ get_header(); ?>
             }
         </script>
     </section>
+</main>
 <?php
 get_footer();

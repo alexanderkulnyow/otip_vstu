@@ -27,47 +27,44 @@
 <div id="page" class="site container-fluid">
 
     <header id="masthead" class="site-header">
-        <div class="row"></div>
-
 		<?php otip__topper(); ?>
-        <div class="w-100"></div>
-        <nav id="site-navigation" class="main-navigation">
+        <nav id="site-navigation" class="">
+<!--        <nav id="site-navigation" class="main-navigation пошел на хуй">-->
             <div class="site-branding">
 				<?php university_logo(); ?>
             </div><!-- .site-branding -->
             <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                <span class="dashicons dashicons-menu-alt3"></span>
+                <span id="burger" class="dashicons dashicons-menu-alt3"></span>
             </button>
-			<?php
+<!--			--><?php
 			wp_nav_menu(
 				array(
 					'theme_location' => 'primary',
 					'menu_id'        => 'primary-menu',
 				)
 			);
-			?>
+//			?>
         </nav><!-- #site-navigation -->
-
-    </header>
-    <div class="row">
-		<?php if ( ! is_front_page() ):
+        <div class="row">
+		    <?php if ( ! is_front_page() ):
 //				echo '<div class="breadcrumbs__wrapper">';
-			if ( is_archive() ) {
+			    if ( is_archive() ) {
 //					the_archive_title( '<h1>', '</h1>' );
-			} elseif ( is_single() || is_page() ) {
+			    } elseif ( is_single() || is_page() ) {
 //					the_title( '<h1>', '</h1>' );
-			}
-			if ( function_exists( 'dds_readline' ) ):
-				dds_readline( ' / ' );
-			endif;
+			    }
+			    if ( function_exists( 'dds_readline' ) ):
+				    dds_readline( ' / ' );
+			    endif;
 //				echo '</div>';
-		else:?>
-            <img class="img-fluid w-100 p-0" src="<?php echo get_header_image(); ?>"
-                 alt="<?php echo get_bloginfo( 'title' ); ?>">
-		<?php endif;
-		//		    ?>
-    </div>
+		    else:?>
+                <img class="img-fluid w-100 p-0" src="<?php echo get_header_image(); ?>"
+                     alt="<?php echo get_bloginfo( 'title' ); ?>">
+		    <?php endif;
+		    //		    ?>
+        </div>
+    </header>
 
-    <div id="sitecontent" class="row">
+
 
 

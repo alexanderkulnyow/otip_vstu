@@ -117,7 +117,7 @@ function theme_styles() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/vendor/font-awesome-4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'slick', get_template_directory_uri() . '/vendor/slick/slick.css' );
 	wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/vendor//slick/slick-theme.css' );
-	wp_enqueue_style( 'otip_theme-style', get_stylesheet_uri(), '', '2.1' );
+	wp_enqueue_style( 'otip_theme-style', get_stylesheet_uri(), '', '2.4' );
 	wp_enqueue_style( 'dashicons' );
 //	подключаем скрипты
 	wp_enqueue_script( 'jquery' );
@@ -131,7 +131,7 @@ function theme_styles() {
 	wp_enqueue_script( 'plugins',
 		get_template_directory_uri() . '/js/plugins.js', array(), ' 1', true );
 	wp_enqueue_script( 'otip_theme-navigation',
-		get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+		get_template_directory_uri() . '/js/navigation.js', array(), '20151123213', true );
 //	wp_enqueue_script( 'otip_theme-customizer',
 //		get_template_directory_uri() . '/js/customizer.js', array(), '20151215', true );
 	wp_enqueue_script( 'main',

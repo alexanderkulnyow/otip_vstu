@@ -9,8 +9,8 @@
  * @package Otip_Theme
  */
 ?>
-</div>
-<footer class="container-fluid footer">
+</main>
+<footer class="row footer">
     <div class="bloginfo ">
         <a href="https://vstu.by/ru/">
             <img src="<?php bloginfo('template_directory'); ?>/img/vstu_logo_new.png" alt="logo">
@@ -20,7 +20,7 @@
     </div>
     <div>
         <p class="footbrand">
-            &#169; Кафедра "<?php bloginfo( 'name' ); ?>" 2017г.
+            &#169; Кафедра "<?php bloginfo( 'name' ); ?>" 2021г.
         </p>
     </div>
 <script type="text/javascript">

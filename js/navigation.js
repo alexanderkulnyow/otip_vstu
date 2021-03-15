@@ -6,13 +6,13 @@ let WWidht = window.innerWidth;
 
 function mobile_menu() {
     if (WWidht <= 900) {
-        nav.className='main-navigation-mobile';
+        nav.className='main-navigation-mobile px-2';
         topperdropdown1.classList.add("dropdown-menu");
         topperdropdown2.classList.add("dropdown-menu");
         topperdropdown3.classList.add("dropdown-menu");
         // console.log(nav.className);
     } else {
-        nav.className='main-navigation';
+        nav.className='main-navigation px-5';
         topperdropdown1.classList.remove("dropdown-menu");
         topperdropdown2.classList.remove("dropdown-menu");
         topperdropdown3.classList.remove("dropdown-menu");
@@ -30,6 +30,7 @@ window.addEventListener(`resize`, event => {
 
 (function () {
     var container, button, menu, links, i, len;
+    burger = document.getElementById('burger');
     container = document.getElementById('site-navigation');
     if (!container) {
         return;
@@ -50,10 +51,12 @@ window.addEventListener(`resize`, event => {
     button.onclick = function () {
         if (-1 !== container.className.indexOf('toggled')) {
             container.className = container.className.replace(' toggled', '');
+            burger.className = burger.className.replace('dashicons-no', 'dashicons-menu-alt3');
             button.setAttribute('aria-expanded', 'false');
             menu.setAttribute('aria-expanded', 'false');
         } else {
             container.className += ' toggled';
+            burger.className = burger.className.replace('dashicons-menu-alt3', 'dashicons-no');
             button.setAttribute('aria-expanded', 'true');
             menu.setAttribute('aria-expanded', 'true');
         }

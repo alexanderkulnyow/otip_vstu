@@ -50,9 +50,10 @@
   .menu-main-container
     display: none
 
-
+.main-navigation-mobile
+  .menu-item
+    padding: 20px 0
 .toggled
-
   .menu-main-container
     display: flex !important
     position: absolute
@@ -70,6 +71,12 @@
       flex-direction: column
       justify-content: center
       align-items: center
+      .menu-item
+        padding: 5px 0
+        a
+          text-decoration: none
+
+
     .sub-menu
       border: 1px solid white
         radius: 5px
@@ -79,7 +86,7 @@
       list-style: none
       display: none
       flex-direction: column
-      &>.menu-item
+      .menu-item
         padding: 5px 0
       .nav-menu
         margin-bottom: 0
