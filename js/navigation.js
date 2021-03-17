@@ -6,13 +6,13 @@ let WWidht = window.innerWidth;
 
 function mobile_menu() {
     if (WWidht <= 900) {
-        nav.className='main-navigation-mobile px-2';
+        nav.className = 'main-navigation-mobile px-2';
         topperdropdown1.classList.add("dropdown-menu");
         topperdropdown2.classList.add("dropdown-menu");
         topperdropdown3.classList.add("dropdown-menu");
         // console.log(nav.className);
     } else {
-        nav.className='main-navigation px-5';
+        nav.className = 'main-navigation px-5';
         topperdropdown1.classList.remove("dropdown-menu");
         topperdropdown2.classList.remove("dropdown-menu");
         topperdropdown3.classList.remove("dropdown-menu");
@@ -20,12 +20,6 @@ function mobile_menu() {
     }
 }
 mobile_menu();
-window.addEventListener(`resize`, event => {
-    mobile_menu();
-    console.log(WWidht);
-}, false);
-
-
 
 
 (function () {

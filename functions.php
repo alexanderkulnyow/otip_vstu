@@ -117,7 +117,7 @@ function theme_styles() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/vendor/font-awesome-4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'slick', get_template_directory_uri() . '/vendor/slick/slick.css' );
 	wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/vendor//slick/slick-theme.css' );
-	wp_enqueue_style( 'otip_theme-style', get_stylesheet_uri(), '', '2.4' );
+	wp_enqueue_style( 'otip_theme-style', get_stylesheet_uri(), '', '2.85' );
 	wp_enqueue_style( 'dashicons' );
 //	подключаем скрипты
 	wp_enqueue_script( 'jquery' );
@@ -268,4 +268,93 @@ function otip__topper() {
         </div>
     </div>
 	<?php
+}
+
+add_action( 'add_meta_boxes', 'menu_add_custom_box' );
+function menu_add_custom_box() {
+	$screens = array( 'post' );
+	add_meta_box( 'menu_sectionid', 'Информация', 'menu_meta_box_callback', $screens );
+}
+
+function menu_meta_box_callback( $post ) {
+	wp_nonce_field( 'menu_save_postdata', 'menu_noncename' );
+
+	$key_menu_elib   = get_post_meta( $post->ID, 'menu-elib', 1 );
+	$key_menu_cost   = get_post_meta( $post->ID, 'menu-cost', 1 );
+	$key_menu_weight = get_post_meta( $post->ID, 'menu-weight', 1 );
+	?>
+    <style>
+        .queen__meta {
+            display: block;
+        }
+
+        .queen__meta label {
+            display: inline-block;
+            width: 160px;
+            text-align: left;
+        }
+
+        .queen__meta input {
+            display: inline-block;
+            width: 200px;
+            text-align: left;
+        }
+    </style>
+    <div class="queen__meta options_group">
+        <p class="queen__meta-item">
+            <label for="name_menu_cost">Должность</label>
+            <input id="name_menu_cost" type="text" name="name_menu_cost"
+                   value="<?php echo $key_menu_cost; ?>"/>
+        </p>
+        <p class="queen__meta-item">
+            <label for="name_menu_weight">Степень</label>
+            <input id="name_menu_weight" type="text" name="name_menu_weight"
+                   value="<?php echo $key_menu_weight; ?>"/>
+        </p>
+        <p class="queen__meta-item">
+            <label for="name_menu_elib">elibrary:</label>
+            <input id="name_menu_elib" type="text" name="name_menu_elib"
+                   value="<?php echo $key_menu_elib; ?>"/>
+        </p>
+
+    </div>
+	<?php
+}
+
+## Сохраняем данные, когда пост сохраняется
+add_action( 'save_post', 'menu_save_postdata' );
+function menu_save_postdata( $post_id ) {
+	// Убедимся что поле установлено.
+
+	if ( ! isset( $_POST['menu_noncename'] ) ) {
+		return;
+	}
+	if ( ! wp_verify_nonce( $_POST['menu_noncename'], 'menu_save_postdata' ) ) {
+		return;
+	}
+	// если это автосохранение ничего не делаем
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+	// проверяем права юзера
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+	if ( ! isset( $_POST['name_menu_cost'] ) ) {
+		return;
+	}
+	if ( ! isset( $_POST['name_menu_weight'] ) ) {
+		return;
+	}
+	if ( ! isset( $_POST['name_menu_elib'] ) ) {
+		return;
+	}
+
+	$data_q_phone = sanitize_text_field( $_POST['name_menu_cost'] );
+	$data_q_visit = sanitize_text_field( $_POST['name_menu_weight'] );
+	$data_q_elib  = sanitize_text_field( $_POST['name_menu_elib'] );
+
+	update_post_meta( $post_id, 'menu-cost', $data_q_phone );
+	update_post_meta( $post_id, 'menu-weight', $data_q_visit );
+	update_post_meta( $post_id, 'menu-elib', $data_q_elib );
 }

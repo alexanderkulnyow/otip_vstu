@@ -29,7 +29,7 @@ get_header();
                 var current_page = <?php echo ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; ?>;
                 var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
             </script>
-            <button id="true_loadmore" class="center-block pr-5 pl-5">Загрузить ещё</button>
+            <button id="true_loadmore" class="center-block m-auto" style="padding: 10px 25px">Загрузить ещё</button>
 		<?php endif; ?>
     </main>
 

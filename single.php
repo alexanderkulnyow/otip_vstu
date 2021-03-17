@@ -10,12 +10,14 @@
 get_header(); ?>
 
 	<div id="primary" class="container content-area mt-5">
-		<main id="main" class="site-main" role="main">
+        <div class="row">
+            <div class="col-12 col-md-9">
+                <main id="main" class="site-main" role="main">
 
-		<?php
-		while ( have_posts() ) : the_post();
+		            <?php
+		            while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content_single', get_post_format() );
+			            get_template_part( 'template-parts/content_single', get_post_format() );
 
 //			the_post_navigation();
 //
@@ -24,12 +26,18 @@ get_header(); ?>
 //				comments_template();
 //			endif;
 
-		endwhile; // End of the loop.
-		?>
+		            endwhile; // End of the loop.
+		            ?>
 
-		</main><!-- #main -->
+                </main><!-- #main -->
+            </div>
+            <div class="col-12 col-md-3">
+	            <?php get_sidebar();?>
+            </div>
+        </div>
+
 	</div><!-- #primary -->
 
 <?php
-//get_sidebar();
+//
 get_footer();
