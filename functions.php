@@ -115,17 +115,28 @@ function theme_styles() {
 	wp_enqueue_style( 'otip_fonts', 'https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Open+Sans:400,700' );
 	wp_enqueue_style( 'bootstrap.min', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.min.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/vendor/font-awesome-4.7.0/css/font-awesome.min.css' );
-	wp_enqueue_style( 'slick', get_template_directory_uri() . '/vendor/slick/slick.css' );
-	wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/vendor//slick/slick-theme.css' );
+
 	wp_enqueue_style( 'otip_theme-style', get_stylesheet_uri(), '', '2.85' );
 	wp_enqueue_style( 'dashicons' );
+
+	if ( is_front_page() ) {
+		wp_enqueue_style( 'slick', get_template_directory_uri() . '/vendor/slick/slick.css' );
+		wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/vendor//slick/slick-theme.css' );
+		wp_enqueue_script( 'slick', get_template_directory_uri() . '/vendor/slick/slick.js', array('jquery'), ' 1', true );
+		wp_enqueue_script( 'slick-init', get_template_directory_uri() . '/js/slick-init.js', array('slick'), ' 1', true );
+	}
+
+	if ( is_singular() ) {
+		wp_enqueue_style( 'otip__popup-style', get_template_directory_uri() . '/vendor/magnific-popup/magnific-popup.css', array(), '1.42' );
+		wp_enqueue_script( 'otip__popup', get_template_directory_uri() . '/vendor/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), '1.0', true );
+		wp_enqueue_script( 'otip__popup-init', get_template_directory_uri() . '/js/magnifip-popup-init.js', array('otip__popup'), '1.42' );
+	}
 //	подключаем скрипты
-	wp_enqueue_script( 'jquery' );
+
 
 	wp_enqueue_script( 'bootstrap.js',
 		get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.bundle.min.js', array(), ' 1', true );
-	wp_enqueue_script( 'slick',
-		get_template_directory_uri() . '/vendor/slick/slick.js', array(), ' 1', true );
+
 	wp_enqueue_script( 'modernizr-2.8.3.min',
 		get_template_directory_uri() . '/vendor/modernizr-2.8.3.min.js', array(), ' 1', true );
 	wp_enqueue_script( 'plugins',

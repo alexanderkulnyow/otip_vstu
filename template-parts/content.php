@@ -27,9 +27,9 @@
                title="<?php the_title_attribute(); ?>" class="card-img-wrapper">
 				<?php
 				$default_attr = array(
-					'src'   => $src,
+//					'src'   => $src,
 					'class' => "img-fluid w-100",
-					'alt'   => trim( strip_tags( $wp_postmeta->_wp_attachment_image_alt ) ),
+//					'alt'   => trim( strip_tags( $wp_postmeta->_wp_attachment_image_alt ) ),
 				);
 				the_post_thumbnail( 'full', $default_attr );
 				?>

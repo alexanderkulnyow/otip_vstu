@@ -39,9 +39,9 @@ get_header();
                                                    title="<?php the_title_attribute(); ?>" class="card-img-wrapper">
 			                                        <?php
 			                                        $default_attr = array(
-				                                        'src'   => $src,
+//				                                        'src'   => $src,
 				                                        'class' => "img-fluid",
-				                                        'alt'   => trim( strip_tags( $wp_postmeta->_wp_attachment_image_alt ) ),
+//				                                        'alt'   => trim( strip_tags( $wp_postmeta->_wp_attachment_image_alt ) ),
 			                                        );
 			                                        the_post_thumbnail( 'medium', $default_attr );
 			                                        ?>
