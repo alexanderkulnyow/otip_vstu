@@ -9,7 +9,7 @@ get_header();
                     <h2 class="text-left bb"><span class="underline">Пр</span>еподавательский состав</h2>
 					<?php
 					// параметры по умолчанию
-					$args = array(
+					$args  = array(
 						'numberposts'      => 0,
 						'category_name'    => 'staff',
 						'orderby'          => 'date',
@@ -22,39 +22,36 @@ get_header();
 						'include_children' => 'false',
 						'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
 					);
+					$query = new WP_Query( $args );
+					while ( $query->have_posts() ) {
+						$query->the_post(); ?>
 
-					$posts = get_posts( $args );
-					foreach ( $posts as $post ) {
-						setup_postdata( $post ); ?>
+
                         <div class="col-12 col-sm-6 col-md-12">
-
                             <div class="card mb-4 w-80">
-                                <!--                                <a href="-->
-								<?php //echo esc_url( get_permalink() ); ?><!--" style="text-decoration: none"   rel="bookmark">-->
                                 <div class="row align-items-center g-0 staff__card">
                                     <div class="col-md-3">
-	                                        <?php
-	                                        if ( has_post_thumbnail() ) { ?>
-                                                <a href="<?php echo the_permalink(); ?>"
-                                                   title="<?php the_title_attribute(); ?>" class="card-img-wrapper">
-			                                        <?php
-			                                        $default_attr = array(
+										<?php
+										if ( has_post_thumbnail() ) { ?>
+                                            <a href="<?php echo get_the_permalink(); ?>"
+                                               title="<?php the_title_attribute(); ?>" class="card-img-wrapper">
+												<?php
+												$default_attr = array(
 //				                                        'src'   => $src,
-				                                        'class' => "img-fluid",
+													'class' => "img-fluid",
 //				                                        'alt'   => trim( strip_tags( $wp_postmeta->_wp_attachment_image_alt ) ),
-			                                        );
-			                                        the_post_thumbnail( 'medium', $default_attr );
-			                                        ?>
+												);
+												the_post_thumbnail( 'medium', $default_attr );
+												?>
 
-                                                </a>
-		                                        <?php
-	                                        }
-	                                        ?>
-
+                                            </a>
+											<?php
+										}
+										?>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body ">
-                                            <a href="<?php echo the_permalink(); ?>"
+                                            <a href="<?php echo get_the_permalink(); ?>"
                                                title="<?php the_title_attribute(); ?>" style="text-decoration: none;">
 
                                                 <h4 class="card-title"><?php the_title(); ?></h4>
@@ -84,33 +81,32 @@ get_header();
 
 					<?php }
 					wp_reset_postdata();
-					unset($args, $posts, $post );
+					unset( $args, $posts, $post );
 					?>
                 </section>
-                <section class="">
+                <section class="row">
 
-<!--                    <h2 class="text-center bb"><span class="underline">Ла</span>борантский состав</h2>-->
+                    <h2 class="text-left bb"><span class="underline">Ла</span>борантский состав</h2>
                     <div class="row justify-content-center">
 
 						<?php
 						// параметры по умолчанию
-						$args = array(
-//							'numberposts'      => -1,
-							'category_name'    => 'labs',
+						$args1  = array(
+							//							'numberposts'      => -1,
+							'cat'              => 7,
 							'orderby'          => 'date',
 							'order'            => 'ASC',
-//							'include'          => array(),
-//							'exclude'          => array( 19 ),
+							//							'include'          => array(),
+							//							'exclude'          => array( 19 ),
 							'meta_key'         => ' ',
 							'meta_value'       => ' ',
 							'post_type'        => 'post',
 							'include_children' => 'false',
 							'suppress_filters' => true // подавление работы фильтров изменения SQL запроса
 						);
-
-						$posts = get_posts( $args );
-						foreach ( $posts as $post ) {
-							setup_postdata( $post ); ?>
+						$query1 = new WP_Query( $args1 );
+						while ( $query1->have_posts() ) {
+							$query1->the_post(); ?>
                             <div class="col-sm-6 col-md-4 staff_prepodlist">
 
                                 <div class="card" style="border: none">
@@ -120,8 +116,10 @@ get_header();
 									) ); ?>
                                     <div class="card-body mx-auto">
                                         <h4 class="img-fluid text-center" itemprop="name"
-                                            style="width: 170px;"><?php the_title(); ?></h4>
-                                        <span class="text-center mx-auto d-block"><?php echo get_post_meta( $post->ID, 'staff_post', true ); ?></span>
+                                            style="width: 170px;">
+											<?php the_title(); ?></h4>
+                                        <span class="text-center mx-auto d-block">
+<!--				--><?php //echo get_post_meta( $post->ID, 'staff_post', true ); ?><!--</span>-->
 
                                     </div>
                                 </div>
@@ -130,8 +128,8 @@ get_header();
 
 						<?php }
 
-//						var_dump($args);
-//						var_dump($posts);
+						//						var_dump($args);
+						//						var_dump($posts);
 						wp_reset_postdata();
 						?>
 
@@ -147,7 +145,7 @@ get_header();
         </div>
 
 
-        </div>
+
 
     </main>
 

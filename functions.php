@@ -126,7 +126,7 @@ function theme_styles() {
 		wp_enqueue_script( 'slick-init', get_template_directory_uri() . '/js/slick-init.js', array('slick'), ' 1', true );
 	}
 
-	if ( is_singular() ) {
+	if ( has_category('gallery') ) {
 		wp_enqueue_style( 'otip__popup-style', get_template_directory_uri() . '/vendor/magnific-popup/magnific-popup.css', array(), '1.42' );
 		wp_enqueue_script( 'otip__popup', get_template_directory_uri() . '/vendor/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), '1.0', true );
 		wp_enqueue_script( 'otip__popup-init', get_template_directory_uri() . '/js/magnifip-popup-init.js', array('otip__popup'), '1.42' );

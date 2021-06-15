@@ -42,7 +42,7 @@ function otip_redline() {
 		</div>
 	<?php else: ?>
 		<div class="container-fluid staff_red">
-			<a href="<?php the_permalink(); ?>">
+			<a href="<?php echo get_the_permalink(); ?>">
 				<h1><?php the_title(); ?></h1></a>
 			<p>
 				<?php if ( function_exists( 'dds_breadcrumbs' ) ):

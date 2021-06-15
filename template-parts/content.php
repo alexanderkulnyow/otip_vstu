@@ -23,7 +23,7 @@
 
 		<?php
 		if ( has_post_thumbnail() ) { ?>
-            <a href="<?php echo the_permalink(); ?>"
+            <a href="<?php echo get_the_permalink(); ?>"
                title="<?php the_title_attribute(); ?>" class="card-img-wrapper">
 				<?php
 				$default_attr = array(

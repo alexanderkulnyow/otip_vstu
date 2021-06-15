@@ -62,32 +62,20 @@ get_header(); ?>
 					setup_postdata( $post );
 					?>
                     <div class="staff__item">
-                        <a href=" <?php echo esc_url( get_permalink() ); ?>" style="text-decoration: none;">
+                        <a href=" <?php echo esc_url( get_permalink() ); ?>">
 							<?php the_post_thumbnail( 'thumbnail', array( 'class' => ' rounded-circle center-block ' ) ); ?>
                         </a>
-                        <style>
-                            .front__prepod_name {
-                                text-align: center;
 
-                            }
-                            .front__prepod_name:first-child:after {
-
-                            }
-
-                        </style>
-                        <a  href=" <?php echo esc_url( get_permalink() ); ?>" style="text-decoration: none;">
-                            <h4 class="text-center mt-2 front__prepod_name" itemprop="name"> <?php echo get_the_title(); ?></h4>
+                        <a href=" <?php echo esc_url( get_permalink() ); ?>">
+                            <h4 class="text-center mt-2 front__prepod_name"
+                                itemprop="name"> <?php echo get_the_title(); ?></h4>
                         </a>
-                        <div class="mt-3">
-							<?php get_the_excerpt(); ?>
-                        </div>
                     </div>
 					<?php
 				}
 				?>
 
             </div>
-
 
 
         </section>
