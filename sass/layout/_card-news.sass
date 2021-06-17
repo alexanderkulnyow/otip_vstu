@@ -7,24 +7,29 @@
 .news__block
 
 .news__item
-  //padding: 0 15px
-  //margin: 0 15px
+  display: inline-block
+  //width: 300px
+  overflow: hidden
+  white-space: nowrap
 
-  a
+  a.header__news-link
     text-decoration: none
+    height: 20px
+    overflow: hidden
 
-  h3
+  h3.header__news
     font-size: 18px
     font-weight: 500
     line-height: 24px
     color: $mint !important
     text-decoration: none
-    height: 50px
-    overflow: hidden
+    position: relative
+    left: 0px
+    white-space: nowrap
+    transition: 6s linear
+    display: inline-block
     &:hover
-      height: 100%
-
-
+      transform: translateX(calc(-100% + 100px))
   p
     font-size: 16px
     line-height: 20px

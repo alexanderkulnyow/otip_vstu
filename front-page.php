@@ -27,17 +27,7 @@ get_header(); ?>
 					);
 					foreach ( $myposts as $post ) {
 						setup_postdata( $post );
-						?>
-                        <div class="news__item pl-5 pr-5 pb-5">
-                            <a href="<?php echo esc_url( get_permalink() ); ?>">
-                                <h3 lang="ru" class="color_coral" itemprop="name"><?php the_title(); ?></h3>
-                            </a>
-                            <div class="text-justify mt-4"><?php the_excerpt(); ?></div>
-
-                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="news__link"
-                               rel="bookmark"> Читать полностью...</a>
-                        </div>
-						<?php
+						otip_news_card('');
 					}
 					?>
                 </div>

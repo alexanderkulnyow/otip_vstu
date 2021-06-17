@@ -7,17 +7,9 @@ get_header();
         <div class="row news__block">
 			<?php
 			while ( have_posts() ) :
-				the_post(); ?>
-                <div class="news__item col-md-4 pl-5 pr-5 pb-5">
-                    <a href="<?php echo esc_url( get_permalink() ); ?>">
-                        <h3 class="color_coral" itemprop="name"><?php the_title(); ?></h3>
-                    </a>
-                    <div class="text-justify mt-4"><?php the_excerpt(); ?></div>
+				the_post();
+				otip_news_card( 'col-md-4');
 
-                    <a href="<?php echo esc_url( get_permalink() ); ?>" class="news__link"
-                       rel="bookmark"> Читать полностью...</a>
-                </div>
-			<?php
 			endwhile; // End of the loop.
 			?>
         </div>

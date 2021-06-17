@@ -122,14 +122,14 @@ function theme_styles() {
 	if ( is_front_page() ) {
 		wp_enqueue_style( 'slick', get_template_directory_uri() . '/vendor/slick/slick.css' );
 		wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/vendor//slick/slick-theme.css' );
-		wp_enqueue_script( 'slick', get_template_directory_uri() . '/vendor/slick/slick.js', array('jquery'), ' 1', true );
-		wp_enqueue_script( 'slick-init', get_template_directory_uri() . '/js/slick-init.js', array('slick'), ' 1', true );
+		wp_enqueue_script( 'slick', get_template_directory_uri() . '/vendor/slick/slick.js', array( 'jquery' ), ' 1', true );
+		wp_enqueue_script( 'slick-init', get_template_directory_uri() . '/js/slick-init.js', array( 'slick' ), ' 1', true );
 	}
 
-	if ( has_category('gallery') ) {
+	if ( has_category( 'gallery' ) ) {
 		wp_enqueue_style( 'otip__popup-style', get_template_directory_uri() . '/vendor/magnific-popup/magnific-popup.css', array(), '1.42' );
 		wp_enqueue_script( 'otip__popup', get_template_directory_uri() . '/vendor/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), '1.0', true );
-		wp_enqueue_script( 'otip__popup-init', get_template_directory_uri() . '/js/magnifip-popup-init.js', array('otip__popup'), '1.42' );
+		wp_enqueue_script( 'otip__popup-init', get_template_directory_uri() . '/js/magnifip-popup-init.js', array( 'otip__popup' ), '1.42' );
 	}
 //	подключаем скрипты
 
@@ -219,17 +219,8 @@ function true_load_posts() {
         <div class="row">
 			<?php
 			while ( have_posts() ) :
-				the_post(); ?>
-                <div class="news__item col-md-4 pl-5 pr-5 pb-5">
-                    <a href="<?php echo esc_url( get_permalink() ); ?>">
-                        <h3 class="color_coral" itemprop="name"><?php the_title(); ?></h3>
-                    </a>
-                    <div class="text-justify mt-4"><?php the_excerpt(); ?></div>
-
-                    <a href="<?php echo esc_url( get_permalink() ); ?>" class="news__link"
-                       rel="bookmark"> Читать полностью...</a>
-                </div>
-			<?php
+				the_post();
+				otip_news_card( 'col-md-4');
 			endwhile; // End of the loop.
 			?>
         </div>
@@ -368,4 +359,17 @@ function menu_save_postdata( $post_id ) {
 	update_post_meta( $post_id, 'menu-cost', $data_q_phone );
 	update_post_meta( $post_id, 'menu-weight', $data_q_visit );
 	update_post_meta( $post_id, 'menu-elib', $data_q_elib );
+}
+
+function otip_news_card( $classes ) { ?>
+    <div class="news__item pl-5 pr-5 pb-5 <?php echo $classes; ?>">
+        <a class="header__news-link" href="<?php echo esc_url( get_permalink() ); ?>">
+            <h3 lang="ru" class="color_coral header__news" itemprop="name"><?php the_title(); ?></h3>
+        </a>
+        <div class="text-justify mt-2"><?php the_excerpt(); ?></div>
+
+        <a href="<?php echo esc_url( get_permalink() ); ?>" class="news__link"
+           rel="bookmark"> Читать полностью...</a>
+    </div>
+	<?php
 }
