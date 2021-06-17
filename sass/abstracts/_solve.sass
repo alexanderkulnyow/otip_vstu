@@ -105,7 +105,7 @@ article.post
   color: #f8fffd
 
 
-#true_loadmore
+.dds_loadmore
   //margin: 0 auto
   padding: 10px 15px
   background-color: #ddd /* сервый фон */
@@ -118,12 +118,11 @@ article.post
   letter-spacing: 1px /* межбуквенный интервал */
   cursor: pointer /* курсор мыши при наведении такой же, как при наведении на ссылку */
   text-transform: uppercase
-  padding: 10px 0 /* внутренние отступы сверху и снизу у кнопки */
+  margin: 0 auto
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out /* CSS-анимация*/
-
-#true_loadmore:hover
-  background-color: #767676
-  color: #fff
+  &:hover
+    background-color: #767676
+    color: #fff
 
 
 

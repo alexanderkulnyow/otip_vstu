@@ -2,29 +2,35 @@
 get_header(); ?>
     <div id="primary" class="container content-area">
         <main id="main" class="site-main row" role="main">
-            <div class="col-12 col-md-9">
-	            <?php
-	            if ( have_posts() ) :
-		            while ( have_posts() ) : the_post();
-			            if ( is_category( 'staff' ) ):
-				            include 'template-parts/staff/staff-archive.php';
+			<?php
+			if ( ! is_category( 'news' ) ) {
+				echo '<div class="col-12 col-md-9">';
+			} else {
+				echo '<div class="col-12 mt-5 mb-5">';
+			}
 
-			            else:
-				            get_template_part( 'template-parts/content', get_post_format() );
-			            endif;
+			if ( in_category( 'staff' ) ) {
+				include 'template-parts/archive-staff.php';
+			}
 
-		            endwhile;
-		            if ( is_category( 'staff' ) ) {
-			            include "template-parts/staff/labs.php";
-		            } else {
-			            //				get_template_part( 'template-parts/content', 'none' );
-		            }
-	            endif; ?>
-            </div>
-            <div class="col-12 col-md-3">
-                <?php get_sidebar(); ?>
-            </div>
+			if ( in_category( 'courses' ) ) {
+				include 'template-parts/archive-courses.php';
+			}
 
+			if ( in_category( 'news' ) ) {
+				include 'template-parts/archive-news.php';
+			}
+
+			if ( in_category( 'science' ) ) {
+				include 'template-parts/archive-science.php';
+			}
+
+			echo '</div>';
+			if ( ! is_category( 'news' ) ) {
+				echo '<div class="col-12 col-md-3">';
+				get_sidebar();
+				echo '</div>';
+			} ?>
         </main><!-- #main -->
     </div><!-- #primary -->
 <?php

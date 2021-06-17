@@ -11,7 +11,7 @@ jQuery(function($){
 
 
 // ПОДГРУЗКА ПОСТОВ
-    $('#true_loadmore').click(function(){
+    $('#dds_loadmore-news').click(function(){
         $(this).text('Загружаю...'); // изменяем текст кнопки, вы также можете добавить прелоадер
         var data = {
             'action': 'loadmore',
@@ -24,11 +24,11 @@ jQuery(function($){
             type:'POST', // тип запроса
             success:function(data){
                 if( data ) {
-                    $('#true_loadmore').text('Загрузить ещё').before(data); // вставляем новые посты
+                    $('#dds_loadmore-news').text('Загрузить ещё').before(data); // вставляем новые посты
                     current_page++; // увеличиваем номер страницы на единицу
                     if (current_page == max_pages) $("#true_loadmore").remove(); // если последняя страница, удаляем кнопку
                 } else {
-                    $('#true_loadmore').remove(); // если мы дошли до последней страницы постов, скроем кнопку
+                    $('#dds_loadmore-news').remove(); // если мы дошли до последней страницы постов, скроем кнопку
                 }
             }
         });
